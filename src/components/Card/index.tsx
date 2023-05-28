@@ -25,14 +25,14 @@ const Card: React.FC<CardProps> = ({ contact, onEdit, onDelete }) => {
     onEdit(contact);
   };
 
-  const handleDelete = async () => {
-    try {
-      await api.delete(`/contact/${contact.id}`);
-      onDelete(contact.id);
-    } catch (error) {
-      console.log("Erro ao excluir o contato:", error);
-    }
-  };
+  // const handleDelete = async () => {
+  //   try {
+  //     await api.delete(`/contact/${contact.id}`);
+  //     onDelete(contact.id);
+  //   } catch (error) {
+  //     console.log("Erro ao excluir o contato:", error);
+  //   }
+  // };
 
   return (
     <CardLiStyled key={contact.id}>
