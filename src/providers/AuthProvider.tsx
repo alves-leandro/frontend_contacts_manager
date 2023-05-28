@@ -49,7 +49,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       navigate("/dashboard");
     } catch (error) {
       toast.error("Email ou senha inválidos");
-      console.error(error);
     }
   };
 
@@ -65,7 +64,6 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
       navigate("/login");
     } catch (error) {
       toast.error("Email já cadastrado no banco de dados");
-      console.error(error);
     }
   };
 

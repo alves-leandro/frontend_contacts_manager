@@ -44,7 +44,6 @@ export const ModalEditContact = ({
       toast.success("Contato editado com sucesso!");
       toggleModal();
     } catch (error) {
-      console.log("Erro ao atualizar o contato:", error);
       setIsUpdating(false);
     }
   };
@@ -59,7 +58,6 @@ export const ModalEditContact = ({
       toggleModal();
     } catch (error) {
       toast.error("Erro ao remover o contato");
-      // console.log("Erro ao excluir o contato:", error);
     }
   };
 
@@ -143,16 +141,15 @@ export const ModalEditContact = ({
           type="submit"
           disabled={isUpdating}
         >
-          {isUpdating ? "Atualizando..." : "Atualizar"}
+          Atualizar
         </StyledButton>
 
         <StyledButton
           buttonsize="form"
           buttonstyle="form"
           onClick={deleteContact}
-          disabled={isUpdating}
         >
-          {isUpdating ? "Excluindo..." : "Excluir"}
+          Excluir
         </StyledButton>
       </FormEditContact>
     </Modal>

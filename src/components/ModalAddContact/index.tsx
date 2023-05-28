@@ -41,7 +41,6 @@ export const ModalAddContact = ({
       toggleModal();
     } catch (error) {
       toast.error("Erro ao criar o contato");
-      // console.log("Erro ao criar o contato:", error);
     }
   };
 
