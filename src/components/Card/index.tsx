@@ -1,6 +1,6 @@
 import React from "react";
 import { CardLiStyled } from "./style";
-import { FaGithub, FaLinkedinIn, FaPen, FaTrash } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaPen } from "react-icons/fa";
 import { StyledButton } from "../../styles/Button";
 import { api } from "../../services/api";
 
@@ -55,13 +55,6 @@ const Card: React.FC<CardProps> = ({ contact, onEdit, onDelete }) => {
                 <FaPen />
               </div>
             </StyledButton>
-            {/* <StyledButton
-              buttonsize="card"
-              buttonstyle="card"
-              onClick={handleDelete}
-            >
-              <FaTrash />
-            </StyledButton> */}
           </div>
           <div className="cardInformation">
             <p>💻 {contact.name}</p>
