@@ -2,7 +2,6 @@ import React from "react";
 import { CardLiStyled } from "./style";
 import { FaGithub, FaLinkedinIn, FaPen } from "react-icons/fa";
 import { StyledButton } from "../../styles/Button";
-import { api } from "../../services/api";
 
 interface CardProps {
   contact: {
@@ -23,6 +22,7 @@ const Card: React.FC<CardProps> = ({ contact, onEdit }) => {
   const handleEdit = () => {
     onEdit(contact);
   };
+
 
   return (
     <CardLiStyled key={contact.id}>

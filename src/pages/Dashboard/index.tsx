@@ -38,17 +38,6 @@ export const Dashboard = () => {
     setModalContact(contact);
   };
 
-  const onDelete = async (id: string) => {
-    try {
-      await api.delete(`/contact/${id}`);
-      setContacts((previousContacts) =>
-        previousContacts.filter((contact) => contact.id !== id)
-      );
-    } catch (error) {
-      console.log("Erro ao excluir o contato:", error);
-    }
-  };
-
   const handleLogout = () => {
     localStorage.removeItem("contact-manager:token");
     window.location.href = "/";
