@@ -97,7 +97,6 @@ export const Dashboard = () => {
               key={contact.id}
               contact={contact}
               onEdit={toggleModal}
-              onDelete={onDelete}
             />
           ))}
         </ul>

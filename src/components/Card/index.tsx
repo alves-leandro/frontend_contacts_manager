@@ -17,22 +17,12 @@ interface CardProps {
     portifolioUrl: string;
   };
   onEdit: (contact: any) => void;
-  onDelete: (id: string) => void;
 }
 
-const Card: React.FC<CardProps> = ({ contact, onEdit, onDelete }) => {
+const Card: React.FC<CardProps> = ({ contact, onEdit }) => {
   const handleEdit = () => {
     onEdit(contact);
   };
-
-  // const handleDelete = async () => {
-  //   try {
-  //     await api.delete(`/contact/${contact.id}`);
-  //     onDelete(contact.id);
-  //   } catch (error) {
-  //     console.log("Erro ao excluir o contato:", error);
-  //   }
-  // };
 
   return (
     <CardLiStyled key={contact.id}>
