@@ -41,7 +41,6 @@ export const DashMainPageStyled = styled.div`
     gap: 20px;
     overflow-y: auto;
     height: 80%;
-    /* width: 90%; */
 
     @media (max-width: 1400px) {
       grid-template-columns: repeat(2, 1fr); /* Dois cards por linha em telas "s large" */

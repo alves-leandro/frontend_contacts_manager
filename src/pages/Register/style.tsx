@@ -67,7 +67,6 @@ background: url(${Background});
     justify-content: center;
     background-color: ${theme.colors.black};
     padding: 10%;
-    /* border: 1px solid red; */
 
     @media screen and (max-width: 768px) {
       width: 100%;
