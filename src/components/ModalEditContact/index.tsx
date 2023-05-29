@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import { UpdateContactData, schema } from "./validation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -21,7 +21,7 @@ export const ModalEditContact = ({
   toggleModal,
   setContacts,
 }: ModalEditContactProps) => {
-  const [isUpdating, setIsUpdating] = useState(false);
+  // const [isUpdating, setIsUpdating] = useState(false);
   const { register, handleSubmit } = useForm<UpdateContactData>({
     resolver: zodResolver(schema),
     defaultValues: contact,
@@ -29,7 +29,7 @@ export const ModalEditContact = ({
 
   const updateContact = async (data: UpdateContactData) => {
     try {
-      setIsUpdating(true);
+      // setIsUpdating(true);
       const response = await api.patch<Contact>(`/contact/${contact.id}`, data);
       setContacts((previousContacts) => {
         const updatedContacts = previousContacts.map((c) => {
@@ -40,11 +40,11 @@ export const ModalEditContact = ({
         });
         return updatedContacts;
       });
-      setIsUpdating(false);
+      // setIsUpdating(false);
       toast.success("Contato editado com sucesso!");
       toggleModal();
     } catch (error) {
-      setIsUpdating(false);
+      // setIsUpdating(false);
     }
   };
 
@@ -139,19 +139,18 @@ export const ModalEditContact = ({
           buttonsize="form"
           buttonstyle="form"
           type="submit"
-          disabled={isUpdating}
+          // disabled={isUpdating}
         >
           Atualizar
         </StyledButton>
-
-        <StyledButton
-          buttonsize="form"
-          buttonstyle="form"
-          onClick={deleteContact}
-        >
-          Excluir
-        </StyledButton>
       </FormEditContact>
+      <StyledButton
+        buttonsize="form"
+        buttonstyle="form"
+        onClick={deleteContact}
+      >
+        Excluir
+      </StyledButton>
     </Modal>
   );
 };
