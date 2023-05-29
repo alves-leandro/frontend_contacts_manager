@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 :root {
     font-size: 60%;   
   }
@@ -17,7 +16,6 @@ export default createGlobalStyle`
     padding: 0;
     outline:0;
     box-sizing: border-box;
-    font-family: 'Space Grotesk', sans-serif;
   }
 
   body,html{
