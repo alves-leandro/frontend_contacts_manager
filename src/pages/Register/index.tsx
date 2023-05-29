@@ -39,7 +39,7 @@ export const Register = () => {
           <br />
           <p>
             <TypeAnimation
-              sequence={["Keep all your Dev friends even closer!"]}
+              sequence={["Don't forget to register your friends' social networks!"]}
             />
           </p>
           <br />
