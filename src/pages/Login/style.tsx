@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Background from "../../assets/images/map/wp2567270.jpg";
+import { theme } from "../../styles/theme";
 
 export const LoginMainDivStyled = styled.div`
   background: url(${Background});
@@ -25,8 +26,7 @@ export const LoginMainDivStyled = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    /* border: solid red 1px; */
+    color: ${theme.colors.grey1};
     flex-wrap: wrap;
 
     @media screen and (max-width: 768px) {
@@ -37,13 +37,10 @@ export const LoginMainDivStyled = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: center;
-
-      /* align-items: center; */
       text-align: center;
       max-width: 50%;
       min-width: 50%;
       height: 60%;
-      /* border: solid blue 1px; */
 
       @media screen and (max-width: 768px) {
         width: 100%;
@@ -52,8 +49,8 @@ export const LoginMainDivStyled = styled.div`
     }
 
     span {
-      color: red;
-      font-size: 30px;
+      color: ${theme.colors.primary};
+      font-size: ${theme.typography.Heading0.size};
     }
 
     p {
@@ -68,8 +65,7 @@ export const LoginMainDivStyled = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: black;
-    /* border: solid red 1px; */
+    background-color: ${theme.colors.black};
 
     @media screen and (max-width: 768px) {
       width: 100%;
