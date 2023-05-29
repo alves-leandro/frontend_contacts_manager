@@ -21,16 +21,19 @@ export interface Contact {
 export const Dashboard = () => {
   const [contacts, setContacts] = useState<Contact[]>([]);
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const [modalContact, setModalContact] = useState<Contact | undefined>(
-    undefined
-  );
+  const [modalContact, setModalContact] = useState<Contact | undefined>(undefined);
 
   useEffect(() => {
-    (async () => {
-      const response = await api.get<Contact[]>("contact");
+    const fetchContacts = async () => {
+      try {
+        const response = await api.get<Contact[]>("contact");
+        setContacts(response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
-      setContacts(response.data);
-    })();
+    fetchContacts();
   }, []);
 
   const toggleModal = (contact?: Contact) => {
@@ -66,10 +69,7 @@ export const Dashboard = () => {
 
       <DashMainPageStyled>
         {isOpenModal && !modalContact && (
-          <ModalAddContact
-            toggleModal={toggleModal}
-            setContacts={setContacts}
-          />
+          <ModalAddContact toggleModal={toggleModal} setContacts={setContacts} />
         )}
 
         {modalContact && (
@@ -82,11 +82,7 @@ export const Dashboard = () => {
 
         <ul>
           {contacts.map((contact) => (
-            <Card
-              key={contact.id}
-              contact={contact}
-              onEdit={toggleModal}
-            />
+            <Card key={contact.id} contact={contact} onEdit={toggleModal} />
           ))}
         </ul>
       </DashMainPageStyled>
